@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-// Railway / production env vars, fallback to localhost for local dev
-$db_host = getenv('MYSQLHOST')     ?: getenv('DB_HOST')     ?: 'localhost';
-$db_port = getenv('MYSQLPORT')     ?: getenv('DB_PORT')     ?: '3306';
-$db_name = getenv('MYSQLDATABASE') ?: getenv('DB_NAME')     ?: 'complaint_db';
-$db_user = getenv('MYSQLUSER')     ?: getenv('DB_USER')     ?: 'root';
-$db_pass = getenv('MYSQLPASSWORD') ?: getenv('DB_PASS')     ?: '';
+// BASE_URL: empty on Vercel (root domain), /complaint-system for local XAMPP
+define('BASE_URL', getenv('BASE_URL') ?: '');
 
-// On Railway, BASE_URL is '' (root), locally it's '/complaint-system'
-define('BASE_URL', getenv('RAILWAY_ENVIRONMENT') ? '' : '/complaint-system');
+// Database config from environment variables (set in Vercel dashboard)
+$db_host = getenv('DB_HOST')     ?: 'localhost';
+$db_name = getenv('DB_NAME')     ?: 'complaint_db';
+$db_user = getenv('DB_USER')     ?: 'root';
+$db_pass = getenv('DB_PASS')     ?: '';
+$db_port = getenv('DB_PORT')     ?: '3306';
 
 $dsn = "mysql:host={$db_host};port={$db_port};dbname={$db_name};charset=utf8mb4";
 
@@ -22,7 +22,7 @@ try {
     die('Database connection failed: ' . htmlspecialchars($e->getMessage()));
 }
 
-const STATUSES = ['Pending', 'In Progress', 'Resolved', 'Rejected'];
+const STATUSES   = ['Pending', 'In Progress', 'Resolved', 'Rejected'];
 const CATEGORIES = ['Service', 'Billing', 'Technical', 'Staff Behaviour', 'Other'];
 
 function e($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }

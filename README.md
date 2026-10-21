@@ -1,18 +1,16 @@
-# Complaint Management System
+# Complaint Management System (PHP + MySQL)
 
-A PHP + MySQL complaint management web application.
+## Setup (XAMPP)
+1. Copy this folder `complaint-system` into `C:\xampp\htdocs\`.
+2. Start Apache and MySQL in XAMPP.
+3. Open phpMyAdmin -> Import -> choose `database.sql`.
+4. Edit DB username/password in `config.php` if needed.
+5. Open http://localhost/complaint-system/
+
+## Default Admin
+Email: admin@example.com
+Password: admin123
 
 ## Features
-- User registration & login
-- Submit complaints with categories
-- Track complaint status
-- Admin dashboard to manage & update complaints
-
-## Default Admin Login
-- Email: `admin@example.com`
-- Password: `admin123`
-
-## Local Setup (XAMPP)
-1. Place folder in `htdocs/complaint-system`
-2. Import `database.sql` in phpMyAdmin
-3. Visit `http://localhost/complaint-system`
+- User: register, login, submit complaint, track status, see admin remark
+- Admin: view all complaints, filter by status, update status + remark
