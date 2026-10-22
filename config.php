@@ -72,7 +72,7 @@ function init_sqlite_db(PDO $pdo) {
         $admin_hash = password_hash('admin123', PASSWORD_DEFAULT);
         $insert = $pdo->prepare('INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)');
         $insert->execute(['Administrator', 'admin@example.com', $admin_hash, 'admin']);
-        $insert->execute(['Smit Akhja', 'smit@example.com', $admin_hash, 'user']);
+        $insert->execute(['Gohil Avniba', 'avni@example.com', $admin_hash, 'user']);
 
         // Seed initial sample complaints for a realistic presentation
         $c_stmt = $pdo->prepare('INSERT INTO complaints (user_id, title, category, description, status, admin_remark, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');

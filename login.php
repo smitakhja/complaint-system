@@ -46,9 +46,9 @@ require __DIR__ . '/includes/header.php';
         <span class="role-pill admin">Admin</span>
         <code>admin@example.com</code> / <code>admin123</code>
       </button>
-      <button type="button" class="btn-demo" onclick="fillCreds('smit@example.com', 'admin123')">
+      <button type="button" class="btn-demo" onclick="fillCreds('avni@example.com', 'admin123')">
         <span class="role-pill user">Student</span>
-        <code>smit@example.com</code> / <code>admin123</code>
+        <code>avni@example.com</code> / <code>admin123</code>
       </button>
     </div>
   </div>

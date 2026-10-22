@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
 
   <form method="post">
     <label>Full Name</label>
-    <input type="text" name="name" value="<?= e($name) ?>" placeholder="e.g. Smit Akhja" required>
+    <input type="text" name="name" value="<?= e($name) ?>" placeholder="e.g. Gohil Avniba" required>
 
     <label>Email Address</label>
     <input type="email" name="email" value="<?= e($email) ?>" placeholder="student@example.com" required>
